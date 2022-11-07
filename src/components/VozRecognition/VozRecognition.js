@@ -5,7 +5,7 @@ const VozRecognition = ({onVoice}) => {
     const [voice, setVoice] = useState(null);
     
     const handleVoice = () => {
-        const recognition = new window.webkitSpeechRecognition();
+        const recognition = new window.webkitSpeechRecognition() || new window.SpeechRecognition();
         recognition.lang = 'es-ES';
         recognition.start();
         recognition.onresult = (event) => {
