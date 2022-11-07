@@ -7,6 +7,7 @@ const VozRecognition = ({onVoice}) => {
     const handleVoice = () => {
         const recognition = new window.webkitSpeechRecognition() || new window.SpeechRecognition();
         recognition.lang = 'es-ES';
+        recognition.continuous = false
         recognition.start();
         recognition.onresult = (event) => {
         const speechToText = event.results[0][0].transcript;
