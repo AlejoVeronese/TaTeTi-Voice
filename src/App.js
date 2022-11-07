@@ -58,34 +58,34 @@ const App = () => {
   const handleVoice = (voice) => {
     let newSquares = [...squares];
     let square = null;
-    if (voice === 'uno' || voice === '1') {
+    if (voice === 'uno' || voice === '1' || voice === 'Uno') {
       square = 0;
     }
-    if (voice === 'dos' || voice === '2') {
+    if (voice === 'dos' || voice === '2'  || voice === 'Dos') {
       square = 1;
     }
-    if (voice === 'tres' || voice === '3') {
+    if (voice === 'tres' || voice === '3' || voice === 'Tres') {
       square = 2;
     }
-    if (voice === 'cuatro' || voice === '4') {
+    if (voice === 'cuatro' || voice === '4' || voice === 'Cuatro') {
       square = 3;
     }
-    if (voice === 'cinco' || voice === '5') {
+    if (voice === 'cinco' || voice === '5' || voice === 'Cinco') {
       square = 4;
     }
-    if (voice === 'seis' || voice === '6') {
+    if (voice === 'seis' || voice === '6' || voice === 'Seis') {
       square = 5;
     }
-    if (voice === 'siete' || voice === '7') {
+    if (voice === 'siete' || voice === '7' || voice === 'Siete') {
       square = 6;
     }
-    if (voice === 'ocho' || voice === '8') {
+    if (voice === 'ocho' || voice === '8' || voice === 'Ocho') {
       square = 7;
     }
-    if (voice === 'nueve' || voice === '9') {
+    if (voice === 'nueve' || voice === '9' || voice === 'Nueve') {
       square = 8;
     }
-    if (voice === 'reiniciar') {
+    if (voice === 'reiniciar' || voice === 'Reiniciar') {
       reset();
     }
     if(square !== null && newSquares[square] === null) {
