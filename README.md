@@ -1,3 +1,3 @@
 # Tres en línea - TaTeTi
 
-<img src="https://i.ibb.co/BybrwRh/Screen-Shot-2021-02-07-at-23-52-27.png" alt="tateti" width="400"/>
+![image](https://user-images.githubusercontent.com/82910644/200227628-5d38e2a4-7435-418f-b0f4-7ad9d1db4cda.png)
