@@ -20,19 +20,19 @@ const VozRecognition = ({onVoice}) => {
     window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new window.SpeechRecognition();
     recognition.lang = 'es-ES';
-    recognition.interimResults = false;
+    recognition.interimResults = true;
     recognition.continuous = false;
     recognition.addEventListener('result', (e)=>{
-        console.log(e.results[0][0].transcript)
+        console.log("Frase:",e.results[0][0].transcript)
         const speechToText = e.results[0][0].transcript;
         let res=toString(speechToText)
         setVoice(res);
         onVoice(speechToText);
 
     })
-    // recognition.addEventListener('end',()=>{
-    // recognition.start();
-    // })
+    recognition.addEventListener('end',()=>{
+    recognition.start();
+    })
     recognition.start();
 
     // const handleVoice = () => {
