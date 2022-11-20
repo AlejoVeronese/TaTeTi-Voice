@@ -1,5 +1,5 @@
 import './VozRecognition.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const toString = (entry)=>{
     let res=""
@@ -18,35 +18,25 @@ const possibilities = ['1','2','3','4','5','6','7','8','9',
 const VozRecognition = ({onVoice}) => {
     const [voice, setVoice] = useState(null);
     window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    console.log("Estoy escuchando")
     const recognition = new window.SpeechRecognition();
     recognition.lang = 'es-ES';
-    recognition.interimResults = true;
-    recognition.continuous = false;
-    recognition.addEventListener('result', (e)=>{
-        console.log("Frase:",e.results[0][0].transcript)
-        const speechToText = e.results[0][0].transcript;
-        let res=toString(speechToText)
-        setVoice(res);
-        onVoice(speechToText);
+    recognition.interimResults = false;
+    useEffect(() => {
 
-    })
-    recognition.addEventListener('end',()=>{
-    recognition.start();
-    })
-    recognition.start();
-
-    // const handleVoice = () => {
-    //     const recognition = new window.webkitSpeechRecognition() || new window.SpeechRecognition();
-    //     recognition.lang = 'es-ES';
-    //     recognition.continuous = false
-    //     recognition.start();
-    //     recognition.onresult = (event) => {
-    //     const speechToText = event.results[0][0].transcript;
-    //     let res=toString(speechToText)
-    //     setVoice(res);
-    //     onVoice(speechToText);
-    //     }
-    // }
+        recognition.addEventListener("result",(e)=> {
+            console.log("Frase:",e.results[0][0].transcript)
+            const speechToText = e.results[0][0].transcript;
+            let res=toString(speechToText)
+            setVoice(res);
+            onVoice(res);
+        })
+        recognition.addEventListener("end",() =>{
+            recognition.start()
+        });
+        recognition.start();
+    }, [])
+    
 
     return (
         <div className="VozRecognition">

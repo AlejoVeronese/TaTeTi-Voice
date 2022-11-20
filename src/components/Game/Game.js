@@ -57,6 +57,7 @@ const Game = () => {
   }
 
   const handleVoice = (voice) => {
+    console.log("Estoy manejando la voz")
     let newSquares = [...squares];
     let square = null;
     if (voice === 'uno' || voice === '1' || voice === 'Uno') {
