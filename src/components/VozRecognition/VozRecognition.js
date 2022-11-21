@@ -31,9 +31,9 @@ const VozRecognition = ({onVoice}) => {
             setVoice(res);
             onVoice(res);
         })
-        recognition.addEventListener("end",() =>{
-            recognition.start()
-        });
+        // recognition.addEventListener("end",() =>{
+        //     recognition.start()
+        // });
         recognition.start();
     }, [voice])
     useEffect(() => {
