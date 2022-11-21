@@ -113,11 +113,12 @@ const Game = () => {
   return (
     <div className="container">
       <h2 className="description"> Diga un numero entre el 1 y el 9 o "reiniciar" si asi lo desea</h2>
+      <h3 className="description">Turno de jugador: {turn}</h3>
+      <VozRecognition onVoice={handleVoice} />
       <Board winningSquares={winningSquares} turn={turn} squares={squares} onClick={handleClick}/>
       <ScoreBoard  scoreO={score.O} scoreX={score.X} />
       <br></br>
       <br></br>
-      <VozRecognition onVoice={handleVoice} />
     </div>
   );
 }

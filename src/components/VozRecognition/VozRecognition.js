@@ -35,7 +35,7 @@ const VozRecognition = ({onVoice}) => {
             recognition.start()
         });
         recognition.start();
-    }, [voice])
+    }, [])
     
 
     return (
