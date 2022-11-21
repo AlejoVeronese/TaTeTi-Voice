@@ -46,6 +46,7 @@ const Game = () => {
       endGame(null, Array.from(Array(10).keys()));
       return
     }
+    console.log("Cambio el turno")
     setTurn(turn === 'X' ? 'O' : 'X');
   }
 
