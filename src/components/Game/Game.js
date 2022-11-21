@@ -88,9 +88,9 @@ const Game = () => {
     if (voice === 'nueve' || voice === '9' || voice === 'Nueve') {
       square = 8;
     }
-    if (voice === 'reiniciar' || voice === 'Reiniciar') {
-      reset();
-    }
+    // if (voice === 'reiniciar' || voice === 'Reiniciar') {
+    //   reset();
+    // }
     if(square !== null && newSquares[square] === null) {
       newSquares.splice(square, 1, turn);
       setSquares(newSquares);
