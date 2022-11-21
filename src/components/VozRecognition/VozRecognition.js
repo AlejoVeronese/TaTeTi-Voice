@@ -36,6 +36,10 @@ const VozRecognition = ({onVoice}) => {
         });
         recognition.start();
     }, [])
+    useEffect(() => {
+        voice ? onVoice(voice):null;
+    }, [voice])
+
     
 
     return (
