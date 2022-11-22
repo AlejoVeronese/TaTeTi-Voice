@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Board from '../Board/Board';
 import ScoreBoard from '../ScoreBoard/ScoreBoard';
 import VozRecognition from '../VozRecognition/VozRecognition';
@@ -17,8 +17,7 @@ const winningPositions = [
 ];
 
 
-const Game = () => {
-
+const Game = ({voice}) => {
   const [turn, setTurn] = useState('X');
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [winningSquares, setWinningSquares] = useState([]);
@@ -46,9 +45,9 @@ const Game = () => {
       endGame(null, Array.from(Array(10).keys()));
       return
     }
-    console.log("Cambio el turno")
     setTurn(turn === 'X' ? 'O' : 'X');
   }
+
 
   const handleClick = square => {
     let newSquares = [...squares];
@@ -56,9 +55,8 @@ const Game = () => {
     setSquares(newSquares);
     checkForWinner(newSquares);
   }
-
-  const handleVoice = (voice) => {
-    console.log("Estoy manejando la voz")
+  useEffect(() => {
+    console.log("Estoy manejando la voz",voice)
     let newSquares = [...squares];
     let square = null;
     if (voice === 'uno' || voice === '1' || voice === 'Uno') {
@@ -96,7 +94,49 @@ const Game = () => {
       setSquares(newSquares);
       checkForWinner(newSquares);
     }
-  }
+    
+  },[voice])
+  // const handleVoice = (voice) => {
+  //   console.log("Estoy manejando la voz",voice)
+  //   let newSquares = [...squares];
+  //   let square = null;
+  //   if (voice === 'uno' || voice === '1' || voice === 'Uno') {
+  //     square = 0;
+  //   }
+  //   if (voice === 'dos' || voice === '2'  || voice === 'Dos') {
+  //     square = 1;
+  //   }
+  //   if (voice === 'tres' || voice === '3' || voice === 'Tres') {
+  //     square = 2;
+  //   }
+  //   if (voice === 'cuatro' || voice === '4' || voice === 'Cuatro') {
+  //     square = 3;
+  //   }
+  //   if (voice === 'cinco' || voice === '5' || voice === 'Cinco') {
+  //     square = 4;
+  //   }
+  //   if (voice === 'seis' || voice === '6' || voice === 'Seis') {
+  //     square = 5;
+  //   }
+  //   if (voice === 'siete' || voice === '7' || voice === 'Siete') {
+  //     square = 6;
+  //   }
+  //   if (voice === 'ocho' || voice === '8' || voice === 'Ocho') {
+  //     square = 7;
+  //   }
+  //   if (voice === 'nueve' || voice === '9' || voice === 'Nueve') {
+  //     square = 8;
+  //   }
+  //   if (voice === 'reiniciar' || voice === 'Reiniciar') {
+  //     reset();
+  //   }
+  //   if(square !== null && newSquares[square] === null) {
+  //     newSquares.splice(square, 1, turn);
+  //     setSquares(newSquares);
+  //     checkForWinner(newSquares);
+  //   }
+    
+  // }
 
   const endGame = (result, winningPositions) => {
     setTurn(null);
@@ -114,7 +154,7 @@ const Game = () => {
     <div className="container">
       <h2 className="description"> Diga un numero entre el 1 y el 9 o "reiniciar" si asi lo desea</h2>
       <h3 className="description">Turno de jugador: {turn}</h3>
-      <VozRecognition onVoice={handleVoice} />
+      {/* <VozRecognition onVoice={handleVoice} /> */}
       <Board winningSquares={winningSquares} turn={turn} squares={squares} onClick={handleClick}/>
       <ScoreBoard  scoreO={score.O} scoreX={score.X} />
       <br></br>
