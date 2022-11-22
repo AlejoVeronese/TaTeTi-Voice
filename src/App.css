@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 107vh;
+  height: 110vh;
   background-color: #22333B;
 }
 
@@ -15,5 +15,5 @@
 .description{
   color: white;
   font-size: 1rem;
-  margin: 1rem;
+  margin: 0;
 }

@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color: #22333B;
+  }
+  
+  .title{
+    margin:10px 0 0 0;
+    color: white;
+    font-size: 2rem;
+  }
+  
+  .description{
+    margin:0 0 0 0;
+    color: white;
+    font-size: 1rem;
+  }
+  

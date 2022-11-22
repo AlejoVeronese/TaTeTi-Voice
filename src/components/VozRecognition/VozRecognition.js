@@ -46,7 +46,7 @@ const VozRecognition = ({onVoice}) => {
 
     return (
         <div className="VozRecognition">
-        {possibilities.includes(voice) || voice === null ? <h2 className="voiceText">Usted ha dicho: {voice}</h2> : <h3 className="incorrect">Incorrecto</h3>}
+        {/* {possibilities.includes(voice) || voice === null ? <h2 className="voiceText">Usted ha dicho: {voice}</h2> : <h3 className="incorrect">Incorrecto</h3>} */}
         </div>
     );
     }
