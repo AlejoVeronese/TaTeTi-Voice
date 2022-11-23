@@ -10,6 +10,14 @@
   text-shadow: 0 0 10px #000;
 }
 
+.redT{
+  color: #CD493A;
+}
+
+.blueT{
+  color: #4392F1;
+}
+
 .white{
     font-size: 3rem;
 }

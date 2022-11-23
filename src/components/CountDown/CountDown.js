@@ -23,7 +23,7 @@ export default function CountDown({seconds, changeTurn, turn}) {
     
     return (
         <div className="countdown">
-            <h3>Tiempo del turno: " {turn} "</h3>
+            <h3>Tiempo del turno: " <span className={turn == 'X' ? "redT" : "blueT"}>{turn}</span>  "</h3>
             <span className={count < 6 ? "red" : "white"}>{count}</span>
         </div>
     );
