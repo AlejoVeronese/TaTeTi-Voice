@@ -25,6 +25,7 @@ export default function CountDown({seconds, changeTurn, turn}) {
         <div className="countdown">
             <h3>Tiempo del turno: " <span className={turn == 'X' ? "redT" : "blueT"}>{turn}</span>  "</h3>
             <span className={count < 6 ? "red" : "white"}>{count}</span>
+            {count < 6 && <span className="redDanger">Estas por perder el Turno !!</span>}
         </div>
     );
 }

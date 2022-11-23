@@ -26,3 +26,10 @@
     font-size: 3rem;
     color: red;
 }
+
+.redDanger{
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: red;
+    text-shadow: 0 0 10px #000;
+}
