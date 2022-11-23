@@ -11,6 +11,10 @@ export default function CountDown({seconds, changeTurn, turn}) {
     }, [count]);
 
     useEffect(() => {
+        setCount(seconds);
+    }, [turn]);
+
+    useEffect(() => {
         if (count === 0) {
             setCount(seconds);
             changeTurn();
