@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Board from '../Board/Board';
 import ScoreBoard from '../ScoreBoard/ScoreBoard';
+import CountDown from '../CountDown/CountDown';
 import './Game.css';
 
 
@@ -45,6 +46,14 @@ const Game = ({voice}) => {
       return
     }
     setTurn(turn === 'X' ? 'O' : 'X');
+  }
+
+  const changeTurn = () => {
+    if(turn === 'X') {
+      setTurn('O');
+    } else {
+      setTurn('X');
+    }
   }
 
 
@@ -110,10 +119,11 @@ const Game = ({voice}) => {
 
   return (
     <div className="container">
-      <h2 className="description"> Diga un numero entre el 1 y el 9 o "reiniciar" si asi lo desea</h2>
-      <h3 className="description">Turno de: {turn}</h3>
+      <h2 className="gameTitle"> Diga Un Numero entre el 1 y el 9 </h2>
+      <h3 className="turnIndicator">Turno de: {turn}</h3>
       <Board winningSquares={winningSquares} turn={turn} squares={squares} onClick={handleClick}/>
       <ScoreBoard  scoreO={score.O} scoreX={score.X} />
+      <CountDown seconds={10} changeTurn={changeTurn} turn={turn}/>
       <br></br>
       <br></br>
     </div>

@@ -11,7 +11,7 @@ const Introduction=()=>{
             <h3 className="description">Para jugar, di el número de la casilla que quieras marcar (1-9)</h3>
             <h3 className="description">Para reiniciar el juego, di "Reiniciar"</h3>
             <h3 className="description">Para salir del juego, di "Salir"</h3>
-            <ReactPlayer url="../../media/never.mp4" className="react-player" playing={true} width='75%' height='50%'/>
+            {/* <ReactPlayer url="../../media/never.mp4" className="react-player" playing={true} width='75%' height='50%'/> */}
             {/* <button onClick={()=>handleStart('comenzar')}>Comenzar</button> */}
         </div>
     );
