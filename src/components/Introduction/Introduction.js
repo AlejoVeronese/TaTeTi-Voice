@@ -1,6 +1,5 @@
 import "./Introduction.css";
 import React from 'react';
-import ReactPlayer from 'react-player';
 const Introduction=()=>{
 
     return(
@@ -12,8 +11,6 @@ const Introduction=()=>{
             <h3 className="description">⚫ Apurate, solo tienes 10 Segundos !!</h3>
             <h3 className="description">⚫ Para reiniciar el juego, di "Reiniciar"</h3>
             <h3 className="description">⚫ Para salir del juego, di "Salir"</h3>
-            {/* <ReactPlayer url="../../media/never.mp4" className="react-player" playing={true} width='75%' height='50%'/> */}
-            {/* <button onClick={()=>handleStart('comenzar')}>Comenzar</button> */}
         </div>
     );
 }

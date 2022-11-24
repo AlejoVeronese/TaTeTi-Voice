@@ -119,8 +119,7 @@ const Game = ({voice}) => {
 
   return (
     <div className="container">
-      <h2 className="gameTitle"> Diga Un Numero entre el 1 y el 9 </h2>
-      <h3 className="turnIndicator">Turno de: {turn}</h3>
+      <h2 id='gameTitle' className="gameTitle"> Diga Un Numero entre el 1 y el 9 </h2>
       <Board winningSquares={winningSquares} turn={turn} squares={squares} onClick={handleClick}/>
       <ScoreBoard  scoreO={score.O} scoreX={score.X} />
       <CountDown seconds={10} changeTurn={changeTurn} turn={turn}/>

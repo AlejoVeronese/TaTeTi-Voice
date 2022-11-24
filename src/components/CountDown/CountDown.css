@@ -19,17 +19,37 @@
 }
 
 .white{
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 3rem;
 }
 
 .red{
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 3rem;
     color: red;
 }
 
-.redDanger{
-    margin-top: 15px;
+.redAlert{
     font-size: 1.5rem;
     color: red;
     text-shadow: 0 0 10px #000;
+}
+
+.greenAlert{
+  font-size: 1.5rem;
+  color: green;
+  text-shadow: 0 0 10px #000;
+}
+
+.mr{
+    width: 100px;
+    height: 100px;
+    padding-left: 30px;
+    margin: auto;
 }
