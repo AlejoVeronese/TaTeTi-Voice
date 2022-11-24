@@ -27,7 +27,8 @@ export default function CountDown({seconds, changeTurn, turn}) {
     useEffect(() => {
         if(turn === 'X') {
             soundPlayX.play();
-        } else {
+        } 
+        if(turn === 'O') {
             soundPlayO.play();
         }
     }, [turn]);
