@@ -11,12 +11,10 @@ import turnX from '../../media/TurnX.mp3';
 import turnO from '../../media/TurnO.mp3';
 
 const soundPlayX = new Howl({
-    src: [turnX],
-    autoplay: true,
+    src: [turnX]
 });
 const soundPlayO = new Howl({
-    src: [turnO],
-    autoplay: true,
+    src: [turnO]
 });
 
 Howler.autoUnlock = true;
